@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <title>Crystal Game</title>
+    <script src="assets/code.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title text-center p-5 mt-3">
+        <h1>Cyrstall Collector</h1>
+      </div>
+      <div class="crystal mt-4">
+        <div class="crystal-head p-2 text-center">
+          <p class="m-0 p-1">Instruction</p>
+        </div>
+        <p class="info p-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet at
+          dolor eaque tenetur nulla, rem sequi qui deserunt repudiandae
+          asperiores officiis perferendis odio cumque, dignissimos totam maxime
+          facilis fuga distinctio nisi vitae tempora. Ut ea atque ipsa maxime
+          consequatur explicabo ipsum, mollitia asperiores iure nisi, earum
+          magnam deserunt saepe eveniet itaque corporis. Similique assumenda
+          eaque ad, nesciunt nostrum, fugiat reiciendis numquam reprehenderit
+          sint eum deleniti hic perspiciatis repellat quia dolorem animi
+          voluptatem enim optio dolorum! Beatae commodi culpa qui in.
+        </p>
+      </div>
+
+      <div class="crystal mt-4">
+        <div class="crystal-head p-2 text-center">
+          <p class="m-0 p-1">Target Score</p>
+        </div>
+        <p id="ai_score" class="text-center p-5 m-0 score">0</p>
+      </div>
+
+      <div class="crystal mt-4">
+        <div class="crystal-head p-2 text-center">
+          <p class="m-0 p-1">Your Score</p>
+        </div>
+        <p id="your_score" class="text-center p-5 m-0 score">0</p>
+      </div>
+
+      <div class="crystal mt-4">
+        <div class="crystal-head p-2 text-center">Cyrstal Selection</div>
+        <div class="p-4 d-flex justify-content-lg-around px-5">
+          <button class="btn" data-value="">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpFO6pp_K3XZorPN9GvIV5GB5depbgJ2-iXnj8juNWUm-UZLBGXVSDDRH8W61vOoULTWQ&usqp=CAU"
+            />
+          </button>
+          <button class="btn" data-value="">
+            <img
+              src="data:image/jpeg;base64,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"
+            />
+          </button>
+          <button class="btn" data-value="">
+            <img
+              src="https://png.pngtree.com/png-clipart/20190906/original/pngtree-technological-sense-of-simple-blue-gems-png-image_4557824.jpg"
+            />
+          </button>
+          <button class="btn" data-value="">
+            <img
+              src="https://images.discerningassets.com/image/upload/c_fill,h_1000,w_1000/c_fit,fl_relative,h_1.0,o_100,w_1.0/c_fill,w_1000,h_1000/v1554416612/Timothy-Hogan-Aqua-Crystal_ztwlh3.jpg"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="crystal mt-4">
+        <div class="crystal-head p-2 text-center">
+          <p class="m-0 p-1">Win Count</p>
+        </div>
+        <p id="wins" class="text-center p-5 m-0 score">0</p>
+      </div>
+      <div class="crystal mt-4 mb-5">
+        <div class="crystal-head p-2 text-center">
+          <p class="m-0 p-1">Loss Count</p>
+        </div>
+        <p id="losses" class="text-center p-5 m-0 score">0</p>
+      </div>
+    </div>
+  </body>
+</html>

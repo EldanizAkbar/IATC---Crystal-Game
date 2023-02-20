@@ -1,0 +1,35 @@
+.title{
+  background-color: purple;
+  color: white;
+  border-radius: 5px;
+}
+.title h1{
+  font-size: 80px;
+}
+.crystal{
+  border-radius: 5px;
+  border: 1px solid rgb(51, 51, 210);
+}
+.crystal-head{
+  color: white;
+  background-color: #0066CC;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.info{
+  text-align: justify;
+
+}
+span{
+  font-size: 40px;
+}
+
+.score{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+img{
+  width: 100px;
+  height: 100px ;
+}
